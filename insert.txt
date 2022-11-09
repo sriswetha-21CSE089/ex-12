@@ -1,0 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package khjhhg;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Vishnu
+ */
+public class insert 
+{
+
+    public static void main(String[] args)
+    {
+       Integer n[]=new Integer[10];
+       Scanner o=new Scanner(System.in);
+        System.out.println("enter n:");
+        Integer n1=o.nextInt();
+       System.out.println("enter elements :");
+       for(int i=0;i<n1;i++)
+       {
+           n[i]=o.nextInt();
+       }
+       System.out.println("enter element to insert:");
+       Integer key=o.nextInt();
+       System.out.println("enter position to insert :"); 
+       Integer pos=o.nextInt();
+       System.out.println("enter position to delete :"); 
+       Integer pos1=o.nextInt();
+       insert1<Integer> obj=new insert1<>(n,key,pos,n1,pos1);
+       
+       obj.inserting();
+       obj.delete();
+    }
+ }
+ class insert1<T extends Integer>
+ { 
+     T a[],key,pos,n1,pos1;
+
+    insert1(T a[],T key,T pos,T n1,T pos1)
+    {
+      this.a=a;
+      this.key=key;
+      this.pos=pos;
+      this.n1=n1;
+    }
+    
+    void inserting()
+    {
+        for(int i = (n1-1); i >= (pos-1); i--)
+        {
+            a[i+1] = a[i];
+        }
+        a[pos-1] = key;
+        System.out.print("After inserting:");
+        for(int i = 0; i < n1+1; i++)
+        {
+            System.out.print(a[i]+",");
+        }
+    }
+    void delete()
+    {
+        int[] a1 = new int[a.length-1];
+        int j=key;
+        for(int i=0, k=0;i<a.length;i++){
+            if(i!=j){
+                a1[k]=a[i];
+                k++;
+            }
+        }
+        for(int i = 0; i < n1+1; i++)
+        {
+            System.out.print(a1[i]+",");
+        }
+    }
+}
+    
+ 
+
+
