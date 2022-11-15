@@ -69,7 +69,7 @@ public class insert
            a[i]=a[i+1];
         }
         
-        for(int i = 0; i < n1+1; i++)
+        for(int i = 0; i < n1; i++)
         {
             System.out.print(a[i]+",");
         }
